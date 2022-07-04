@@ -1,13 +1,26 @@
-import React from "react";
+import React, {useContext} from "react";
 import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom";
+import axios from "axios";
+import {AuthContext} from "../../context/AuthContext";
 
 function SignIn() {
     const {register, handleSubmit} = useForm();
+    const {login} = useContext(AuthContext)
 
-
-    function inlogData(data) {
+    async function handleLogin(data) {
         console.log(data)
+        try {
+            const result = await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signin`, {
+                    username: data.username,
+                    password: data.wachtwoord,
+                }
+            )
+            console.log(result)
+            login(result.data.accessToken)
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
@@ -15,14 +28,14 @@ function SignIn() {
             <h1>Inloggen</h1>
             <p>Vul de velden hieronder in om in te kunnen loggen.</p>
 
-            <form onSubmit={handleSubmit(inlogData)}>
+            <form onSubmit={handleSubmit(handleLogin)}>
                 <label htmlFor="form-email">
-                    Email:
+                    Gebruikersnaam:
                     <input
                         type="text"
-                        id="form-email"
-                        {...register("email")}
-                        placeholder="email-adres"
+                        id="form-username"
+                        {...register("username")}
+                        placeholder="gebruikersnaam"
                     />
                 </label>
                 <label htmlFor="form-wachtwoord">
@@ -39,7 +52,6 @@ function SignIn() {
                 >Inloggen
                 </button>
             </form>
-            <p>Wachtwoord vergeten? Klik dan <Link to="/wachtwoord-herstel">hier!</Link></p>
             <p>Geen account? Dat kan ook. Wil je er toch een? Klik dan <Link to="/registratie">hier!</Link></p>
         </>
     )

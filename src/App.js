@@ -11,10 +11,11 @@ import './App.css';
 import NavBar from "./components/NavBar";
 import Home from "./pages/home/Home";
 import SignIn from "./pages/signin/SignIn";
-import PasswordRecovery from "./pages/passwordRecovery/PasswordRecovery";
+import PasswordChange from "./pages/passwordRecovery/PasswordChange";
 import SignUp from "./pages/signup/SignUp";
 import Profile from "./pages/profile/Profile";
 import SignOut from "./pages/SignOut/SignOut";
+import PrivateRoute from "./helpers/PrivateRoute";
 
 
 function App() {
@@ -28,15 +29,15 @@ function App() {
                 <Route exact path="/login">
                     <SignIn/>
                 </Route>
-                <Route exact path="/wachtwoord-herstel">
-                    <PasswordRecovery/>
-                </Route>
+                <PrivateRoute exact path="/wachtwoord-verandering">
+                    <PasswordChange/>
+                </PrivateRoute>
                 <Route exact path="/registratie">
                     <SignUp/>
                 </Route>
-                <Route exact path="/profiel">
+                <PrivateRoute exact path="/profiel">
                     <Profile/>
-                </Route>
+                </PrivateRoute>
                 <Route exact path="/loguit">
                     <SignOut/>
                 </Route>

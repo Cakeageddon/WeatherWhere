@@ -1,8 +1,10 @@
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React, {useContext} from "react";
+import {NavLink, useHistory} from "react-router-dom";
+import {AuthContext} from "../context/AuthContext";
 
 function NavBar() {
-
+    const history = useHistory()
+    const {loggedIn, logout} = useContext(AuthContext)
 
     return (
         <nav>
@@ -11,14 +13,20 @@ function NavBar() {
                     <li>
                         <NavLink to="/" exact
                                  activeClassName="active-link"
-                                 >
+                        >
                             Home
                         </NavLink>
-                        <NavLink to="/login"
-                                 activeClassName="active-link"
+                        {loggedIn ? <button
+                            type="button"
+                            onClick={logout}
+                        >
+                            Log Uit
+                        </button> : <NavLink
+                            to="/login"
+                            activeClassName="active-link"
                         >
                             Log in
-                        </NavLink>
+                        </NavLink>}
                         <NavLink to="/profiel"
                                  activeClassName="active-link"
                         >

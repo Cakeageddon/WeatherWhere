@@ -1,11 +1,25 @@
 import React from "react";
 import {useForm} from "react-hook-form";
+import axios from "axios";
+import {useHistory} from "react-router-dom";
 
 function SignUp() {
     const {register, handleSubmit} = useForm();
+    const history = useHistory()
 
-    function registrationSubmit(data) {
+    async function registrationSubmit(data) {
         console.log(data)
+        try {
+            await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signup`, {
+                    username: data.username,
+                    email: data.email,
+                    password: data.password,
+                }
+            )
+            history.push('/login')
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     return (
@@ -26,7 +40,7 @@ function SignUp() {
                         type="text"
 
                         id="form-wachtwoord"
-                        {...register("wachtwoord")}
+                        {...register("password")}
                     />
                 </label>
                 <label htmlFor="form-gebruikersnaam">
@@ -34,7 +48,7 @@ function SignUp() {
                     <input
                         type="text"
                         id="form-gebruikersnaam"
-                        {...register("gebruikersnaam")}
+                        {...register("username")}
                     />
                 </label>
                 <button
