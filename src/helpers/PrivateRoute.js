@@ -7,7 +7,7 @@ function PrivateRoute({children, isAuth, ...rest}) {
 
     return (
         <Route {...rest}>
-            {loggedIn ? children : <Redirect to="/login"/>}
+            {loggedIn ? children : <Redirect to='/login'/>}
         </Route>
     )
 }

@@ -27,11 +27,10 @@ function AuthContextProvider({children}) {
 
     function login(jwt) {
         localStorage.setItem('token', jwt)
-        fetchUserData(jwt)
-        history.push('/profiel')
+        fetchUserData(jwt,'/profiel')
     }
 
-    async function fetchUserData(jwt) {
+    async function fetchUserData(jwt, redirectUrl) {
         try {
             const data = await axios.get(`https://frontend-educational-backend.herokuapp.com/api/user`, {
                 headers: {
@@ -47,7 +46,10 @@ function AuthContextProvider({children}) {
                     email: data.data.email,
                     id: data.data.id,
                 }
-            })
+            });
+            if (redirectUrl) {
+                history.push(redirectUrl)
+            }
         } catch (e) {
             console.error(e)
         }

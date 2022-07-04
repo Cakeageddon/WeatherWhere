@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import {useForm} from "react-hook-form";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
 
@@ -18,6 +18,7 @@ function SignIn() {
             )
             console.log(result)
             login(result.data.accessToken)
+
         } catch (e) {
             console.error(e)
         }
