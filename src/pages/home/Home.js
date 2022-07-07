@@ -4,10 +4,11 @@ import axios from "axios";
 import kelvinToCelcius from "../../helpers/kelvinToCelsius";
 import SearchBar from "../../components/searchBar/SearchBar";
 import iconMapper from "../../helpers/iconMapper";
-
-import './Home.css'
 import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
+
+import './Home.css'
+
 
 function Home() {
     const [error, setError] = useState(false);
