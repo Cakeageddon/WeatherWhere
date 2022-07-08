@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
+import {CityContext} from "../../context/CityContext";
 
 function SaveCity() {
-    const [cityList, setCityList] = useState([])
+    const [cityList, setCityList] = useContext(CityContext)
     const [city, setCity] = useState('')
     const [error, setError] = useState(false)
 
@@ -27,13 +28,6 @@ function SaveCity() {
         let newCityList = cityList.filter((city) => city.id !== id);
         setCityList([...newCityList])
     }
-
-    useEffect(() => {
-        const cityList = JSON.parse(localStorage.getItem('cities'));
-        if (cityList) {
-            setCityList(cityList);
-        }
-    },[])
 
     useEffect(() => {
         localStorage.setItem('cities', JSON.stringify(cityList));
