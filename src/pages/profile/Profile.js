@@ -33,16 +33,6 @@ function Profile() {
     //
     // }, [location]);
 
-    // useEffect(() => {
-    //     function addCity(city) {
-    //         setStoreCity([...storeCity, [city]]);
-    //     }
-    //     if (storeCity) {
-    //         addCity();
-    //     }
-    // }, [])
-    // console.log(storeCity)
-
     return (
         <>
             <h1>Profiel</h1>

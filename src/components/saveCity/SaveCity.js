@@ -57,15 +57,16 @@ function SaveCity() {
             </div>
             <div className="saved-cities-container">
                 {cityList.map((city) => {
-                    const { id, cityName } = city;
+                    const { id, location } = city;
                     return (
                         <div key={id} className="city-card">
-                            <p className="city">{cityName}</p>
+                            <p className="city">{location}</p>
                             <button
                                 type="button"
                                 onClick={() => deleteCity(id)}
                                 className="button"
-                                />
+                            > Verwijder Stad
+                            </button>
                         </div>
                     );
                 })}
