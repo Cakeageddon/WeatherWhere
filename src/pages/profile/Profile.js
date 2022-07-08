@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import axios from "axios";
 import Preferences from "../../components/preferences/Preferences";
 import SearchBar from "../../components/searchBar/SearchBar";
-import SearchBarStoreCity from "../../components/searchBarStoreCity/SearchBarStoreCity";
+import SaveCity from "../../components/saveCity/SaveCity";
 
 
 function Profile() {
@@ -47,8 +47,8 @@ function Profile() {
         <>
             <h1>Profiel</h1>
             <h3>Opgeslagen steden:</h3>
+            <SaveCity/>
 
-            <SearchBarStoreCity setLocationHandler={setStoreCity}/>
             <Preferences/>
             <p>Wil je je wachtwoord veranderen? Klik dan <Link to="/wachtwoord-verandering">hier!</Link></p>
         </>
