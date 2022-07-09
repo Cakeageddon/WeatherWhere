@@ -44,7 +44,7 @@ function SaveCity() {
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Voer hier de stad in"
                     />
-                    <button type="submit" className="button">
+                    <button type="submit" className="button" disabled={cityList.length === 5}>
                         Voeg stad toe
                     </button>
                 </form>
