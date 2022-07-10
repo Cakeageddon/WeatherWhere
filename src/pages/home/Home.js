@@ -26,7 +26,6 @@ function Home() {
             try {
                 const result = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&lang=nl`);
                 setWeatherData(result.data);
-                console.log(result.data)
             } catch (e) {
                 console.error(e);
                 setError(true);
@@ -39,8 +38,14 @@ function Home() {
         }
 
     }, [location]);
-    console.log(cityList)
 
+    // let unsortedSavedCityArr = cityList.map((city) => {
+    //     return <li key={city.id}>
+    //         <WeatherHomeCard location={city.location} id={city.id}
+    //         />
+    //     </li>
+    // })
+    // let sortedSavedCityArr = unsortedSavedCityArr.sort((a, b) => a.calcScore - b.calcScore)
 
     return (
         <>
@@ -71,7 +76,6 @@ function Home() {
                         <div className="icon-wrapper">
                             {iconMapper(weatherData.weather[0].main)}
                         </div>
-
                         <h3>{weatherData.weather[0].description}</h3>
                         <h3>Windrichting: {windDirection(weatherData.wind.deg)}</h3>
                         <h3>Windkracht: {windSpeed(weatherData.wind.speed)}</h3>

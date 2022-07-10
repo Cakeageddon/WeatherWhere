@@ -63,7 +63,7 @@ function AuthContextProvider({children}) {
             status: 'done'
         })
         localStorage.clear()
-        history.push('/')
+        history.push('/loguit')
     }
 
     const data = {

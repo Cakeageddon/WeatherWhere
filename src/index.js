@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import AuthContextProvider from "./context/AuthContext";
 import CityContextProvider from "./context/CityContext";
+import PreferencesContextProvider from "./context/PreferencesContext";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -14,7 +15,9 @@ root.render(
         <React.StrictMode>
             <AuthContextProvider>
                 <CityContextProvider>
-                    <App/>
+                    <PreferencesContextProvider>
+                        <App/>
+                    </PreferencesContextProvider>
                 </CityContextProvider>
             </AuthContextProvider>
         </React.StrictMode>

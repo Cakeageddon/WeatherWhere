@@ -12,7 +12,7 @@ function SignOut() {
             <p>Foutje?</p>
             <button
                 type="button"
-                onClick={() => history.push("/signin")}
+                onClick={() => history.push("/login")}
             >
                 Log In
             </button>
