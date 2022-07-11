@@ -16,7 +16,6 @@ function Preferences() {
     const watchCloudiness = watch("cloudiness")
     const watchWindspeed = watch("windspeed")
 
-    console.log(preferencesList)
     const onSubmit = data => {
         console.log(data);
         if (data) {

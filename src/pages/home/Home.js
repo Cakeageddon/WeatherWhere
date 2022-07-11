@@ -39,13 +39,6 @@ function Home() {
 
     }, [location]);
 
-    // let unsortedSavedCityArr = cityList.map((city) => {
-    //     return <li key={city.id}>
-    //         <WeatherHomeCard location={city.location} id={city.id}
-    //         />
-    //     </li>
-    // })
-    // let sortedSavedCityArr = unsortedSavedCityArr.sort((a, b) => a.calcScore - b.calcScore)
 
     return (
         <>
@@ -82,10 +75,12 @@ function Home() {
                         <h3>Luchtvochtigheid: {weatherData.main.humidity}% </h3>
                         <h3>Bewolking: {weatherData.clouds.all}%</h3>
 
-                    </>}
-          </span>
+                    </>
+                    }
+            </span>
             </div>
-        </>)
+        </>
+    )
 }
 
 export default Home
