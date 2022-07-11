@@ -8,21 +8,21 @@ import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
 
 import './Home.css'
-import {CityContext} from "../../context/CityContext";
-import WeatherHomeCard from "../../components/weatherHomeCard/WeatherHomeCard";
+import SavedCityListHome from "../../components/savedCityListHome/SavedCityListHome";
 
 
 function Home() {
     const [error, setError] = useState(false);
     const [location, setLocation] = useState('');
     const [weatherData, setWeatherData] = useState(null);
-    const [cityList] = useContext(CityContext)
-    // const cityList = JSON.parse(localStorage.getItem('cities'));
+
+
+
+
 
     useEffect(() => {
         async function fetchData() {
             setError(false);
-
             try {
                 const result = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${process.env.REACT_APP_API_KEY}&lang=nl`);
                 setWeatherData(result.data);
@@ -30,29 +30,30 @@ function Home() {
                 console.error(e);
                 setError(true);
             }
-
         }
-
         if (location) {
             fetchData();
         }
-
     }, [location]);
 
 
     return (
         <>
             <h1>Home</h1>
-            <div className="weather-overview-container">
-                <ul>
-                    {cityList && cityList.map((city) => {
-                        return <li key={city.id}>
-                            <WeatherHomeCard location={city.location} id={city.id}
-                            />
-                        </li>
-                    })}
-                </ul>
-            </div>
+            <SavedCityListHome/>
+
+            {/*<div className="weather-overview-container">*/}
+            {/*    <ul>*/}
+            {/*        {cityList && cityList.map((city) => {*/}
+            {/*            return <li key={city.id}>*/}
+            {/*                <WeatherHomeCard location={city.location} id={city.id}*/}
+            {/*                />*/}
+            {/*            </li>*/}
+            {/*        })}*/}
+            {/*    </ul>*/}
+            {/*</div>*/}
+
+
 
             <div className="weather-search-container">
                 <SearchBar setLocationHandler={setLocation}/>
