@@ -1,0 +1,15 @@
+.nav-outer-container {
+    background: #c1666b;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.nav-links li {
+    margin-left: 20px;
+
+}

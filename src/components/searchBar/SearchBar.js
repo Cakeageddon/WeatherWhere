@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import "./SearchBar.css"
+
 function SearchBar({ setLocationHandler }) {
     const [query, setQuery] = useState('');
 
@@ -21,12 +23,14 @@ function SearchBar({ setLocationHandler }) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           onKeyUp={keyPressCheck}
-          placeholder="Zoek een stad"
+          placeholder="Zoek een locatie"
+          className="searchbar-entry"
       />
 
       <button
           type="button"
           onClick={handleClick}
+          className="searchbar-button"
       >
         Zoek
       </button>

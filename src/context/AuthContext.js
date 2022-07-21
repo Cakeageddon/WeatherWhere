@@ -8,7 +8,6 @@ function AuthContextProvider({children}) {
     const [isAuth, toggleIsAuth] = useState({
         isAuth: false,
         user: null,
-        status: 'pending',
     });
     const history = useHistory();
 
@@ -20,7 +19,6 @@ function AuthContextProvider({children}) {
             toggleIsAuth({
                 isAuth: false,
                 user: null,
-                status: 'done',
             });
         }
     }, [])
@@ -40,7 +38,6 @@ function AuthContextProvider({children}) {
             })
             toggleIsAuth({
                 isAuth: true,
-                status: 'done',
                 user: {
                     username: data.data.username,
                     email: data.data.email,
@@ -60,7 +57,6 @@ function AuthContextProvider({children}) {
         toggleIsAuth({
             isAuth: false,
             user: null,
-            status: 'done'
         })
         localStorage.clear()
         history.push('/loguit')
@@ -75,7 +71,6 @@ function AuthContextProvider({children}) {
 
     return (
         <AuthContext.Provider value={data}>
-            {/*{isAuth.status === 'done' ? children : <p>Loading...</p>}*/}
             {children}
         </AuthContext.Provider>
     )

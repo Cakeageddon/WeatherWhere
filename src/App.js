@@ -16,11 +16,13 @@ import SignUp from "./pages/signup/SignUp";
 import Profile from "./pages/profile/Profile";
 import SignOut from "./pages/SignOut/SignOut";
 import PrivateRoute from "./helpers/PrivateRoute";
+import HeaderWeather from "./components/header/HeaderWeather";
 
 
 function App() {
     return (
         <>
+            <HeaderWeather/>
             <NavBar/>
             <Switch>
                 <Route exact path="/">

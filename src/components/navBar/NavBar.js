@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import {NavLink} from "react-router-dom";
 import {AuthContext} from "../../context/AuthContext";
+import './NavBar.css'
 
 function NavBar() {
     const {loggedIn, logout} = useContext(AuthContext)
@@ -15,6 +16,8 @@ function NavBar() {
                         >
                             Home
                         </NavLink>
+                    </li>
+                        <li>
                         {loggedIn ? <button
                             type="button"
                             onClick={logout}
@@ -26,6 +29,8 @@ function NavBar() {
                         >
                             Log in
                         </NavLink>}
+                        </li>
+                    <li>
                         <NavLink to="/profiel"
                                  activeClassName="active-link"
                         >

@@ -1,26 +1,53 @@
-import React, {useContext, useEffect, useState} from "react";
-import {PreferencesContext} from "../../context/PreferencesContext";
+import React from "react";
+
 import kelvinToCelcius from "../../helpers/kelvinToCelsius";
 import iconMapper from "../../helpers/iconMapper";
 import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
 
+import windSockIcon from "../../assets/icons/icons8-windsock-50.png"
+import humidityIcon from "../../assets/icons/icons8-humidity-50.png"
+import cloudIcon from "../../assets/icons/icons8-clouds-64.png"
 
-function WeatherHomeCard({name, tempK, score, weatherMain, weatherDescription, windDegree, weatherWindSpeed, humidity, clouds}) {
+import "./WeatherHomeCard.css"
+
+function WeatherHomeCard({
+                             name,
+                             tempK,
+                             score,
+                             weatherMain,
+                             weatherDescription,
+                             windDegree,
+                             weatherWindSpeed,
+                             humidity,
+                             clouds
+                         }) {
 
     return (
-            <article className="weather-card">
-                <h3>{name} {kelvinToCelcius(tempK)}</h3>
-                <h3>Score: {score}</h3>
+        <article className="weather-card">
+            <div className="weather-name-score">
+                <h4>{name} </h4>
+                <p>Score:</p>
+                <p>{score}</p>
+            </div>
+
+            <div className="weather-description">
+                <p>{kelvinToCelcius(tempK)}</p>
                 <div className="icon-wrapper">
                     {iconMapper(weatherMain)}
                 </div>
                 <p>{weatherDescription}</p>
-                <p>Windrichting: {windDirection(windDegree)}</p>
-                <p>Windkracht: {windSpeed(weatherWindSpeed)}</p>
-                <p>Luchtvochtigheid: {humidity}% </p>
-                <p>Bewolking: {clouds}%</p>
-            </article>
+            </div>
+
+            <div className="weather-stats">
+                    <p><span className="stats"><img src={windSockIcon} alt="Windsok" width="20"/>
+                        : {windSpeed(weatherWindSpeed)}, {windDirection(windDegree)}</span> </p>
+                    <p><span className="stats"><img src={humidityIcon} alt="Luchtvochtigheid" width="20"/>
+                        : {humidity}%</span></p>
+                    <p><span className="stats"><img src={cloudIcon} alt="Bewolking" width="20"/>
+                        : {clouds}%</span></p>
+            </div>
+        </article>
     )
 }
 

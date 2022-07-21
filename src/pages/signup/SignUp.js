@@ -8,7 +8,6 @@ function SignUp() {
     const history = useHistory()
 
     async function registrationSubmit(data) {
-        console.log(data)
         try {
             await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signup`, {
                     username: data.username,

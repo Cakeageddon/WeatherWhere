@@ -27,7 +27,7 @@ function SavedCityListHome() {
                     const weightedTemperature = ((city.data.main.temp / 100) * preferencesList.preferredWeather.temperature)
                     const weightedCloudiness = ((city.data.clouds.all / 100) * preferencesList.preferredWeather.cloudiness)
                     const weightedWindspeed = ((city.data.wind.speed / 100) * preferencesList.preferredWeather.windspeed)
-                    const weightedScore = (weightedTemperature + weightedCloudiness + weightedWindspeed)
+                    const weightedScore = (weightedTemperature + weightedCloudiness + weightedWindspeed).toFixed(2)
                     return city.data = {...city.data, score: weightedScore};
                 });
                 changedArray.sort((a, b) => b.score - a.score)

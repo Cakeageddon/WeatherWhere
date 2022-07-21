@@ -1,0 +1,26 @@
+.weather-card {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    justify-content: space-between;
+    /*gap: 5px 0px;*/
+}
+
+.weather-description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.weather-stats {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats {
+    display: flex;
+}
