@@ -2,6 +2,7 @@ import React from "react";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
+import "./signUp.css"
 
 function SignUp() {
     const {register, handleSubmit} = useForm();
@@ -22,40 +23,46 @@ function SignUp() {
     }
 
     return (
-        <>
-            <h1>Registratie</h1>
-            <form onSubmit={handleSubmit(registrationSubmit)}>
-                <label htmlFor="form-email">
-                    Email:
+        <div className="signup-outer-container">
+            <div className="signup-form-container">
+                <p>Vul de velden hieronder in om jezelf te registreren.</p>
+            <form onSubmit={handleSubmit(registrationSubmit)} className="signup-form">
+                <label htmlFor="form-gebruikersnaam" className="signup-input-container">
+                    <p>Gebruikersnaam:</p>
+                    <input
+                        type="text"
+                        id="form-gebruikersnaam"
+                        {...register("username")}
+                        className="signup-input-field"
+                    />
+                </label>
+                <label htmlFor="form-email" className="signup-input-container">
+                    <p>Email:</p>
                     <input
                         type="text"
                         id="form-email"
                         {...register("email")}
+                        className="signup-input-field"
                     />
                 </label>
-                <label htmlFor="form-wachtwoord">
-                    Wachtwoord:
+                <label htmlFor="form-wachtwoord" className="signup-input-container">
+                    <p>Wachtwoord:</p>
                     <input
                         type="text"
 
                         id="form-wachtwoord"
                         {...register("password")}
+                        className="signup-input-field"
                     />
                 </label>
-                <label htmlFor="form-gebruikersnaam">
-                    Gebruikersnaam:
-                    <input
-                        type="text"
-                        id="form-gebruikersnaam"
-                        {...register("username")}
-                    />
-                </label>
+
                 <button
                     type="submit"
                 >Registreren
                 </button>
             </form>
-        </>
+            </div>
+        </div>
     )
 }
 

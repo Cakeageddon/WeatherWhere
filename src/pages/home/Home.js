@@ -59,20 +59,19 @@ function Home() {
                         {loading && (<span>Loading...</span>)}
 
                         {weatherData && <div className="weather-home-details">
-                            <h3>{weatherData.name} {kelvinToCelcius(weatherData.main.temp)}
-                            <div className="icon-wrapper">
-                                {iconMapper(weatherData.weather[0].main)}
-                            </div></h3>
-                            <h3>{weatherData.weather[0].description}</h3>
-                            <h3>Windrichting: {windDirection(weatherData.wind.deg)}</h3>
-                            <h3>Windkracht: {windSpeed(weatherData.wind.speed)}</h3>
-                            <h3>Luchtvochtigheid: {weatherData.main.humidity}% </h3>
-                            <h3>Bewolking: {weatherData.clouds.all}%</h3>
-                            </div>
-
+                            <h4>{weatherData.name} {kelvinToCelcius(weatherData.main.temp)}
+                                <div className="icon-wrapper">
+                                    {iconMapper(weatherData.weather[0].main)}
+                                </div>
+                            </h4>
+                            <p>{weatherData.weather[0].description}</p>
+                            <p>Windrichting: {windDirection(weatherData.wind.deg)}</p>
+                            <p>Windkracht: {windSpeed(weatherData.wind.speed)}</p>
+                            <p>Luchtvochtigheid: {weatherData.main.humidity}% </p>
+                            <p>Bewolking: {weatherData.clouds.all}%</p>
+                        </div>
                         }
                     </span>
-
                 </div>
             </div>
         </div>

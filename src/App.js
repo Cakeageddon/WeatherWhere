@@ -11,7 +11,7 @@ import './App.css';
 import NavBar from "./components/navBar/NavBar";
 import Home from "./pages/home/Home";
 import SignIn from "./pages/signin/SignIn";
-import PasswordChange from "./pages/passwordRecovery/PasswordChange";
+import PasswordChange from "./pages/passwordChange/PasswordChange";
 import SignUp from "./pages/signup/SignUp";
 import Profile from "./pages/profile/Profile";
 import SignOut from "./pages/SignOut/SignOut";

@@ -1,29 +1,36 @@
 import React from "react";
 import {useHistory} from "react-router-dom";
+import "./SignOut.css"
 
 function SignOut() {
 
     const history = useHistory()
 
     return (
-        <>
-            <h2>U bent uitgelogd.</h2>
-            <p>Een prettige dag en tot de volgende keer!</p>
-            <p>Foutje?</p>
-            <button
-                type="button"
-                onClick={() => history.push("/login")}
-            >
-                Log In
-            </button>
-            <p>Of</p>
-            <button
-                type="button"
-                onClick={() => history.push("/")}
-            >
-                Home
-            </button>
-        </>
+        <div className="signout-outer-container">
+            <div className="signout-button-text-container">
+                <div className="signout-goodbye-text">
+                    <p>U bent uitgelogd.</p>
+                    <p>Een prettige dag en tot de volgende keer!</p>
+                </div>
+                <p>Foutje?</p>
+                <button
+                    type="button"
+                    onClick={() => history.push("/login")}
+                    className="signout-page-button"
+                >
+                    Log In
+                </button>
+                <p>Of</p>
+                <button
+                    type="button"
+                    onClick={() => history.push("/")}
+                    className="signout-page-button"
+                >
+                    Home
+                </button>
+            </div>
+        </div>
     )
 }
 
