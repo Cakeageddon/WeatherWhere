@@ -13,13 +13,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Router>
         <React.StrictMode>
-            <AuthContextProvider>
-                <CityContextProvider>
+            <CityContextProvider>
+                <AuthContextProvider>
                     <PreferencesContextProvider>
                         <App/>
                     </PreferencesContextProvider>
-                </CityContextProvider>
-            </AuthContextProvider>
+                </AuthContextProvider>
+            </CityContextProvider>
         </React.StrictMode>
     </Router>
 );

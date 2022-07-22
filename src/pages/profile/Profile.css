@@ -15,31 +15,37 @@
 .profile-city-and-preferences-container {
     display: flex;
     flex-wrap: wrap;
-    border: 2px solid black;
-    padding: 5px;
+    /*border: 2px solid black;*/
+    padding: 10px;
     background: #d4b483;
-    border-radius: 8px;
+    border-radius: 25px;
     justify-content: center;
 }
 
 .profile-saved-cities-container {
     min-width: 260px;
-    border: 2px solid black;
-    padding: 5px;
+    /*border: 2px solid black;*/
+    padding: 10px;
     background: #e4dfda;
     border-radius: 8px;
+    margin: 10px;
 }
 
 .profile-preferences-container {
-    border: 2px solid black;
-    padding: 5px;
+    /*border: 2px solid black;*/
+    padding: 10px;
     background: #e4dfda;
     border-radius: 8px;
+    margin: 10px;
 }
 
 .profile-sidebar-container{
     display: flex;
     /*flex-direction: column;*/
     width: 30%;
-    /*min-width: 260px;*/
+    min-width: 185px;
+}
+
+.preferences-input-wrapper {
+    margin: 10px 0 10px 0;
 }

@@ -37,22 +37,24 @@ function Preferences() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div>
+            <div className="preferences-input-wrapper">
                 <p>Temperatuurvoorkeur in %</p>
-                <input type="range" placeholder="temperature" {...register("temperature", {})} />
-                <p>{watchTemperature}</p>
+                <p>Koud<input type="range" placeholder="temperature" {...register("temperature", {})}/>Warm</p>
             </div>
-            <div>
-                <p>Bewolking</p>
+            <div className="preferences-input-wrapper">
+                <p>Bewolking: {watchCloudiness} %</p>
                 <input type="range" placeholder="cloudiness" {...register("cloudiness", {})} />
-                <p>{watchCloudiness} %</p>
             </div>
-            <div>
-                <p>Wind op schaal van beaufort</p>
+            <div className="preferences-input-wrapper">
+                <p>Wind op schaal van beaufort:</p>
                 <input type="range" placeholder="windspeed" max="12" {...register("windspeed", {})} />
                 <p>Schaal: {watchWindspeed}</p>
             </div>
-            <input type="submit"/>
+            <button
+                type="submit"
+                className="profile-button"
+            >Opslaan
+            </button>
         </form>
     )
 }

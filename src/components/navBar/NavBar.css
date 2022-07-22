@@ -10,6 +10,12 @@
 }
 
 .nav-links li {
-    margin-left: 20px;
+    margin: 0 0 10px 20px;
+}
 
+.navbar-link {
+    background-color: #e4dfda;
+    border-radius: 8px;
+    padding: 5px;
+    text-decoration: none;
 }

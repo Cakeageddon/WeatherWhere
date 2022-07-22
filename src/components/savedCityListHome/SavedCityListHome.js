@@ -45,7 +45,6 @@ function SavedCityListHome() {
 
 
     return (
-
         error ?
             <div>
                 <p>Het ziet ernaar uit dat er iets mis is gegaan met het ophalen van gegevens.</p>

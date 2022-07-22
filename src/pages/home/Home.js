@@ -1,5 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import axios from "axios";
+
+import {AuthContext} from "../../context/AuthContext";
+
+import './Home.css'
 
 import kelvinToCelcius from "../../helpers/kelvinToCelsius";
 import SearchBar from "../../components/searchBar/SearchBar";
@@ -7,15 +11,15 @@ import iconMapper from "../../helpers/iconMapper";
 import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
 import SavedCityListHome from "../../components/savedCityListHome/SavedCityListHome";
-import './Home.css'
-import Placeholder from '../../assets/images/weatherWherePlaceHolder.jpg';
 
+import Placeholder from '../../assets/images/weatherWherePlaceHolder.jpg';
 
 function Home() {
     const [error, setError] = useState(false);
     const [location, setLocation] = useState('');
     const [weatherData, setWeatherData] = useState(null);
     const [loading, toggleLoading] = useState(false);
+    const {loggedIn} = useContext(AuthContext)
 
 
     useEffect(() => {
@@ -40,9 +44,18 @@ function Home() {
 
     return (
         <div className="home-outer-container">
-            <div className="saved-city-list-container">
-                <SavedCityListHome/>
-            </div>
+            {loggedIn ?
+                <div className="saved-city-list-container">
+                    <SavedCityListHome/>
+                </div>
+                :
+                <div className="saved-city-loggedout-container">
+                    <p className="saved-city-loggedout-message">
+                        Log in of maak een account aan om hier jouw favoriete of opgeslagen steden te weergeven!
+                    </p>
+                </div>
+            }
+
             <div className="image-and-search-container">
                 <div className="image-container">
                     <img src={Placeholder} alt="placeholder" className="home-image"/>

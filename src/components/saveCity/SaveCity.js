@@ -1,6 +1,5 @@
 import React, {useState, useEffect, useContext} from "react";
 import {CityContext} from "../../context/CityContext";
-import "./SaveCity.css"
 
 function SaveCity() {
     const [cityList, setCityList] = useContext(CityContext)
@@ -36,7 +35,7 @@ function SaveCity() {
 
     return (
         <div className="savecity-container">
-            <p>Opgeslagen steden:</p>
+            <p>Opgeslagen steden: (Max 5)</p>
             <div className="save-cityform-container">
                 <form onSubmit={handleSubmit}>
                     <input

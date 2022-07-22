@@ -12,27 +12,28 @@ function NavBar() {
                 <ul className="nav-links">
                     <li>
                         <NavLink to="/" exact
-                                 activeClassName="active-link"
+                                 className="navbar-link"
                         >
                             Home
                         </NavLink>
                     </li>
                         <li>
-                        {loggedIn ? <button
-                            type="button"
+                        {loggedIn ? <NavLink
+                            to="/loguit"
                             onClick={logout}
+                            className="navbar-link"
                         >
                             Log Uit
-                        </button> : <NavLink
+                        </NavLink> : <NavLink
                             to="/login"
-                            activeClassName="active-link"
+                            className="navbar-link"
                         >
                             Log in
                         </NavLink>}
                         </li>
                     <li>
                         <NavLink to="/profiel"
-                                 activeClassName="active-link"
+                                 className="navbar-link"
                         >
                             Profiel
                         </NavLink>
