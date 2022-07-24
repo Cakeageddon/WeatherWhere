@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import {CityContext} from "../../context/CityContext";
+import "./SaveCity.css"
 
 function SaveCity() {
     const [cityList, setCityList] = useContext(CityContext)
@@ -41,7 +42,7 @@ function SaveCity() {
                     <input
                     type="text"
                     value={city}
-                    className={error ? 'error' : ''}
+                    className={error ? 'error' : 'city-input'}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Voer hier de stad in"
                     />

@@ -4,6 +4,7 @@ import {Link, useHistory} from "react-router-dom";
 import axios from "axios";
 import {AuthContext} from "../../context/AuthContext";
 import "./Signin.css"
+import SigninBackground from "../../assets/backgrounds/odenwald-germany-is-pure-nature.jpg";
 
 function SignIn() {
     const {register, handleSubmit} = useForm();
@@ -26,7 +27,14 @@ function SignIn() {
     }
 
     return (
-        <div className="signin-outer-container">
+        <div className="signin-outer-container"
+             style={
+                 {
+                     background: `url(${SigninBackground})`,
+                     backgroundSize: "cover",
+                     backgroundRepeat: "no-repeat",
+                     backgroundPosition: "center"
+                 }}>
             <div className="signin-form-container">
                 <p>Vul de velden hieronder in om in te loggen.</p>
                 <form onSubmit={handleSubmit(handleLogin)} className="signin-form">
@@ -52,6 +60,7 @@ function SignIn() {
                     </label>
                     <button
                         type="submit"
+                        className="signin-button"
                     >Inloggen
                     </button>
                 </form>

@@ -1,49 +1,54 @@
 .profile-outer-container {
-    margin: 15px 20px 10px 20px;
+    padding: 15px 20px 10px 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    min-height: 500px;
 }
 
 .profile-text-city-pref-container{
     display: flex;
     flex-direction: column;
-    width: 70%;
     min-width: 300px;
+}
+
+.profile-text-container {
+    border-radius: 8px;
+    background-color: rgba(228, 223, 218, 0.6);
+    padding: 5px 10px 5px 10px;
 }
 
 .profile-city-and-preferences-container {
     display: flex;
     flex-wrap: wrap;
-    /*border: 2px solid black;*/
     padding: 10px;
-    background: #d4b483;
-    border-radius: 25px;
+    margin: 10px;
     justify-content: center;
 }
 
 .profile-saved-cities-container {
     min-width: 260px;
-    /*border: 2px solid black;*/
     padding: 10px;
-    background: #e4dfda;
+    background: rgba(228, 223, 218, 0.6);
     border-radius: 8px;
     margin: 10px;
 }
 
 .profile-preferences-container {
-    /*border: 2px solid black;*/
     padding: 10px;
-    background: #e4dfda;
+    background: rgba(228, 223, 218, 0.6);
     border-radius: 8px;
     margin: 10px;
 }
 
 .profile-sidebar-container{
     display: flex;
-    /*flex-direction: column;*/
-    width: 30%;
-    min-width: 185px;
+    width: 235px;
+    height: 100%;
+    border-radius: 8px;
+    background-color: rgba(228, 223, 218, 0.6);
+    padding: 5px;
+    text-align: center;
 }
 
 .preferences-input-wrapper {

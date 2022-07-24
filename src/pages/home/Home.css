@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     flex-direction: row;
-    margin: 15px 20px 10px 20px;
+    padding: 15px 20px 10px 20px;
     flex-wrap: wrap;
 }
 
@@ -22,6 +22,7 @@
 .saved-city-loggedout-message {
     height: 100%;
     border: solid 2px black;
+    background: rgba(228, 223, 218, 0.6);
     box-shadow: 0 4px 10px -2px #000000;
     margin: 0 0 10px 0;
     padding: 5px;
@@ -53,6 +54,7 @@
     flex-direction: column;
     height: 50%;
     border: solid 2px black;
+    background: rgba(228, 223, 218, 0.6);
     box-shadow: 0 4px 10px -2px #000000;
     margin: 0 0 10px 0;
     padding: 5px;

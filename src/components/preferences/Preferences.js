@@ -1,6 +1,7 @@
 import React, {useContext, useEffect, } from "react";
 import {useForm} from "react-hook-form";
 import {PreferencesContext} from "../../context/PreferencesContext";
+import "./Preferences.css"
 
 function Preferences() {
     const [preferencesList, setPreferencesList] = useContext(PreferencesContext)
@@ -12,7 +13,6 @@ function Preferences() {
             windspeed: preferencesList.preferredWeather.windspeed,
         }
     });
-    const watchTemperature = watch("temperature")
     const watchCloudiness = watch("cloudiness")
     const watchWindspeed = watch("windspeed")
 
@@ -46,13 +46,12 @@ function Preferences() {
                 <input type="range" placeholder="cloudiness" {...register("cloudiness", {})} />
             </div>
             <div className="preferences-input-wrapper">
-                <p>Wind op schaal van beaufort:</p>
+                <p>Wind op schaal van beaufort: {watchWindspeed}</p>
                 <input type="range" placeholder="windspeed" max="12" {...register("windspeed", {})} />
-                <p>Schaal: {watchWindspeed}</p>
             </div>
             <button
                 type="submit"
-                className="profile-button"
+                className="preferences-button"
             >Opslaan
             </button>
         </form>
