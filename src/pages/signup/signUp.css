@@ -1,3 +1,11 @@
+.signup-background {
+    background-image: url("../../assets/backgrounds/river-surrounded-by-forests-cloudy-sky-thuringia-germany.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
 .signup-outer-container {
     padding: 15px 20px 10px 20px;
     display: flex;

@@ -3,7 +3,8 @@ import {useForm} from "react-hook-form";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./PasswordChange.css"
-import PasswordchangeBackground from "../../assets/backgrounds/beautiful-scenery-pathway-forest-with-trees-covered-with-frost.jpg"
+import HeaderWeather from "../../components/header/HeaderWeather";
+import NavBar from "../../components/navBar/NavBar";
 
 function PasswordChange() {
     const {register, handleSubmit} = useForm();
@@ -30,14 +31,10 @@ function PasswordChange() {
     }
 
     return (
-        <div className="passwordchange-outer-container"
-             style={
-                 {
-                     background: `url(${PasswordchangeBackground})`,
-                     backgroundSize: "cover",
-                     backgroundRepeat: "no-repeat",
-                     backgroundPosition: "center"
-                 }}>
+        <div className="passwordchange-background">
+            <HeaderWeather/>
+            <NavBar/>
+        <div className="passwordchange-outer-container">
             <div className="passwordchange-form-container">
                 <p>Vul de velden hieronder in om het wachtwoord aan te passen.</p>
                 <form onSubmit={handleSubmit(changeSubmit)} className="passwordchange-form">
@@ -64,6 +61,7 @@ function PasswordChange() {
                     </button>
                 </form>
             </div>
+        </div>
         </div>
     )
 }

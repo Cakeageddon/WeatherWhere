@@ -1,3 +1,11 @@
+.signout-background {
+    background-image: url("../../assets/backgrounds/birch-forest-sunny-afternoon-while-autumn-season.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
 .signout-outer-container {
     padding: 15px 20px 10px 20px;
     display: flex;

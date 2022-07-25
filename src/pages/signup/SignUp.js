@@ -3,7 +3,8 @@ import {useForm} from "react-hook-form";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
 import "./signUp.css"
-import SignupBackground from "../../assets/backgrounds/river-surrounded-by-forests-cloudy-sky-thuringia-germany.jpg";
+import HeaderWeather from "../../components/header/HeaderWeather";
+import NavBar from "../../components/navBar/NavBar";
 
 function SignUp() {
     const {register, handleSubmit} = useForm();
@@ -24,14 +25,10 @@ function SignUp() {
     }
 
     return (
-        <div className="signup-outer-container"
-             style={
-                 {
-                     background: `url(${SignupBackground})`,
-                     backgroundSize: "cover",
-                     backgroundRepeat: "no-repeat",
-                     backgroundPosition: "center"
-                 }}>
+        <div className="signup-background">
+            <HeaderWeather/>
+            <NavBar/>
+        <div className="signup-outer-container">
             <div className="signup-form-container">
                 <p>Vul de velden hieronder in om jezelf te registreren.</p>
             <form onSubmit={handleSubmit(registrationSubmit)} className="signup-form">
@@ -56,8 +53,7 @@ function SignUp() {
                 <label htmlFor="form-wachtwoord" className="signup-input-container">
                     <p>Wachtwoord:</p>
                     <input
-                        type="text"
-
+                        type="password"
                         id="form-wachtwoord"
                         {...register("password")}
                         className="signup-input-field"
@@ -71,6 +67,7 @@ function SignUp() {
                 </button>
             </form>
             </div>
+        </div>
         </div>
     )
 }

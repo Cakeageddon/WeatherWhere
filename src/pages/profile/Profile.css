@@ -1,3 +1,11 @@
+.profile-background {
+    background-image: url("../../assets/backgrounds/beautiful-shot-misty-foggy-mysterious-forest.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
 .profile-outer-container {
     padding: 15px 20px 10px 20px;
     display: flex;
@@ -49,6 +57,7 @@
     background-color: rgba(228, 223, 218, 0.6);
     padding: 5px;
     text-align: center;
+    margin: 0 10px 10px 10px;
 }
 
 .preferences-input-wrapper {

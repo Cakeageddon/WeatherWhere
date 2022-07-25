@@ -11,9 +11,11 @@ import iconMapper from "../../helpers/iconMapper";
 import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
 import SavedCityListHome from "../../components/savedCityListHome/SavedCityListHome";
+import HeaderWeather from "../../components/header/HeaderWeather";
+import NavBar from "../../components/navBar/NavBar";
 
 import Placeholder from '../../assets/images/weatherWherePlaceHolder.jpg';
-import HomeBackground from '../../assets/backgrounds/cloudy-day-by-lake-nauvoo-illinois.jpg'
+
 
 function Home() {
     const [error, setError] = useState(false);
@@ -44,14 +46,10 @@ function Home() {
 
 
     return (
-        <div className="home-outer-container"
-             style={
-                 {
-                     background: `url(${HomeBackground})`,
-                     backgroundSize: "cover",
-                     backgroundRepeat: "no-repeat",
-                     backgroundPosition: "center"
-                 }}>
+        <div className="home-background">
+            <HeaderWeather/>
+            <NavBar/>
+        <div className="home-outer-container">
             {loggedIn ?
                 <div className="saved-city-list-container">
                     <SavedCityListHome/>
@@ -95,6 +93,7 @@ function Home() {
                     </span>
                 </div>
             </div>
+        </div>
         </div>
     )
 }
