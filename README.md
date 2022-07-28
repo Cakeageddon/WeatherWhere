@@ -1,70 +1,70 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weatherwhere
 
-## Available Scripts
+Je wilt buiten iets gaan ondernemen, maar toch eerst even het weer nakijken...
 
-In the project directory, you can run:
+Reden genoeg voor Weatherwhere; een website waar jij jouw favoriete locaties en jouw favoriete weertypes/temperaturen kan ranken en kan opslaan. Zo kan je in 1 oogopslag zien waar het weer precies naar jouw smaak is.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Screenshot
 
-### `npm test`
+![weatherWhereHome](src/assets/screenshots/weatherWhereHome.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Benodigdheden
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1) Voor dit project is een API key van OpenWeatherMap.org (https://openweathermap.org/api) benodigd.
+   De benodigde API key voor beoordelaars kan worden gevonden in het functioneel ontwerp van dit project aan het einde van de inleidingspagina.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2) NPM - Node Package Manager -
+    Dit om het project te kunnen installeren en een correcte werking te kunnen garanderen.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installatie
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Clone het project naar jouw locale machine.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+1) New -> Project from version control...
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  https://github.com/Cakeageddon/WeatherWhere.git
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2) Installeer de dependencies
 
-### Code Splitting
+```bash
+  npm install
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3) Creëer een .env bestand en vul deze met de variabele aanwezig in het .env.dist bestand. 
+Plak hier vervolgens de API-key erachter zonder spaties.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4) Creëer een build om het geheel werkend te krijgen.
 
-### Making a Progressive Web App
+```bash
+  npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+5) Start de server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+  npm run start
+```
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Commentaar
 
-### `npm run build` fails to minify
+Er wordt voor deze app gebruik gemaakt van de door NOVI Hogeschool aangeleverde back-end.
+Gebruikers-accounts worden sporadisch verwijderd met als gevolg dat jij als tester/gebruiker/beoordelaar dus een account dient te registreren.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Enkele eisen hiervoor zijn:
+1) Het emailadres dient een '@' te bevatten.
+2) Het wachtwoord dient minimaal 6 tekens te bevatten.
+3) De gebruikersnaam dient minimaal 6 tekens te bevatten.
+
