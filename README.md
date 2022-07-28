@@ -1,18 +1,24 @@
 
 # Weatherwhere
 
+## Inhoudsopgave
+1. [Introductie](#introductie)
+2. [Benodigdheden](#benodigdheden)
+3. [Installatie](#installatie)
+4. [Commentaar](#commentaar) 
+
+<a name="introductie"></a>
+## Introductie 
+
 Je wilt buiten iets gaan ondernemen, maar toch eerst even het weer nakijken...
 
 Reden genoeg voor Weatherwhere; een website waar jij jouw favoriete locaties en jouw favoriete weertypes/temperaturen kan ranken en kan opslaan. Zo kan je in 1 oogopslag zien waar het weer precies naar jouw smaak is.
 
 
-
-## Screenshot
-
 ![weatherWhereHome](src/assets/screenshots/weatherWhereHome.png)
 
-
-## Benodigdheden
+<a name="benodigdheden"></a>
+## Benodigdheden 
 
 1) Voor dit project is een API key van OpenWeatherMap.org (https://openweathermap.org/api) benodigd.
    De benodigde API key voor beoordelaars kan worden gevonden in het functioneel ontwerp van dit project aan het einde van de inleidingspagina.
@@ -22,8 +28,8 @@ Reden genoeg voor Weatherwhere; een website waar jij jouw favoriete locaties en 
 
 
 
-
-## Installatie
+<a name="installatie"></a>
+## Installatie 
 
 Clone het project naar jouw locale machine.
 
@@ -57,8 +63,8 @@ Plak hier vervolgens de API-key erachter zonder spaties.
   npm run start
 ```
 
-
-## Commentaar
+<a name="commentaar"></a>
+## Commentaar 
 
 Er wordt voor deze app gebruik gemaakt van de door NOVI Hogeschool aangeleverde back-end.
 Gebruikers-accounts worden sporadisch verwijderd met als gevolg dat jij als tester/gebruiker/beoordelaar dus een account dient te registreren.
