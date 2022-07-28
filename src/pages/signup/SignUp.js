@@ -37,7 +37,7 @@ function SignUp() {
                     <input
                         type="text"
                         id="form-gebruikersnaam"
-                        {...register("username")}
+                        {...register("username", {required: true, minLength: 6})}
                         className="signup-input-field"
                     />
                 </label>
@@ -46,7 +46,7 @@ function SignUp() {
                     <input
                         type="text"
                         id="form-email"
-                        {...register("email")}
+                        {...register("email", {required: true, pattern:/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/})}
                         className="signup-input-field"
                     />
                 </label>
@@ -55,7 +55,7 @@ function SignUp() {
                     <input
                         type="password"
                         id="form-wachtwoord"
-                        {...register("password")}
+                        {...register("password", {required: true, minLength: 6})}
                         className="signup-input-field"
                     />
                 </label>
