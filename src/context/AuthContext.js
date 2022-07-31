@@ -1,11 +1,10 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState, } from 'react';
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 
 export const AuthContext = createContext({})
 
 function AuthContextProvider({children}) {
-
     const [isAuth, toggleIsAuth] = useState({
         isAuth: false,
         user: null,

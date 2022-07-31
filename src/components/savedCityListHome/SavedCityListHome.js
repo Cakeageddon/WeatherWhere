@@ -45,17 +45,22 @@ function SavedCityListHome() {
 
 
     return (
-        error ?
+            error ?
             <div className="weather-error">
                 <p>Het ziet ernaar uit dat er iets mis is gegaan met het ophalen van de gegevens.</p>
                 <p>Kijk de locatienamen in jouw profiel nog eens na en wijzig ze desnoods en kom dan terug.</p>
             </div>
             :
             cityListWeatherData.length === 0 ?
-                <div className="weather-error">
-                    <p>Je hebt momenteel nog geen locaties opgeslagen in jouw profiel.</p>
-                </div>
+            <div className="weather-error">
+                <p>Je hebt momenteel nog geen locaties opgeslagen in jouw profiel.</p>
+            </div>
             :
+            isNaN(cityListWeatherData[0].score) ?
+                <div className="weather-error">
+                    <p>Je hebt nog geen weersvoorkeuren aangegeven in jouw profiel. Pas deze aan en sla ze op. Kom dan terug.</p>
+                </div>
+                :
             <div className="weatherCards">
                 {cityListWeatherData && cityListWeatherData.map((cityWeather) => {
                     return <WeatherHomeCard

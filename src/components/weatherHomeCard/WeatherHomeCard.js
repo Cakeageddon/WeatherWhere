@@ -48,6 +48,7 @@ function WeatherHomeCard({
                         : {clouds}%</span></p>
             </div>
         </article>
+
     )
 }
 
