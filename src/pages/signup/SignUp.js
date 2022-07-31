@@ -1,4 +1,5 @@
 import React from "react";
+import {ErrorMessage} from "@hookform/error-message";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import {useHistory} from "react-router-dom";
@@ -7,7 +8,14 @@ import HeaderWeather from "../../components/header/HeaderWeather";
 import NavBar from "../../components/navBar/NavBar";
 
 function SignUp() {
-    const {register, handleSubmit} = useForm();
+    const {
+        register,
+        formState: {errors},
+        handleSubmit
+    } = useForm({
+        criteriaMode: "all"
+    });
+
     const history = useHistory()
 
     async function registrationSubmit(data) {
@@ -28,46 +36,83 @@ function SignUp() {
         <div className="signup-background">
             <HeaderWeather/>
             <NavBar/>
-        <div className="signup-outer-container">
-            <div className="signup-form-container">
-                <p>Vul de velden hieronder in om jezelf te registreren.</p>
-            <form onSubmit={handleSubmit(registrationSubmit)} className="signup-form">
-                <label htmlFor="form-gebruikersnaam" className="signup-input-container">
-                    <p>Gebruikersnaam:</p>
-                    <input
-                        type="text"
-                        id="form-gebruikersnaam"
-                        {...register("username", {required: true, minLength: 6})}
-                        className="signup-input-field"
-                    />
-                </label>
-                <label htmlFor="form-email" className="signup-input-container">
-                    <p>Email:</p>
-                    <input
-                        type="text"
-                        id="form-email"
-                        {...register("email", {required: true, pattern:/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/})}
-                        className="signup-input-field"
-                    />
-                </label>
-                <label htmlFor="form-wachtwoord" className="signup-input-container">
-                    <p>Wachtwoord:</p>
-                    <input
-                        type="password"
-                        id="form-wachtwoord"
-                        {...register("password", {required: true, minLength: 6})}
-                        className="signup-input-field"
-                    />
-                </label>
+            <div className="signup-outer-container">
+                <div className="signup-form-container">
+                    <p>Vul de velden hieronder in om jezelf te registreren.</p>
+                    <form onSubmit={handleSubmit(registrationSubmit)} className="signup-form">
+                        <label htmlFor="form-gebruikersnaam" className="signup-input-container">
+                            <p>Gebruikersnaam:</p>
+                            <input
+                                type="text"
+                                id="form-gebruikersnaam"
+                                {...register("username", {
+                                    required: "Dit moet ingevuld zijn",
+                                    minLength: {
+                                        value: 6,
+                                        message: "De minimale lengte dient 6 karakters te zijn."
+                                    }
+                                })}
+                                className="signup-input-field"
+                            />
+                            <ErrorMessage
+                                errors={errors}
+                                name="username"
+                                render={({message}) => <p className="signup-error-message">{message}</p>}
+                            />
+                        </label>
 
-                <button
-                    type="submit"
-                    className="signup-button"
-                >Registreren
-                </button>
-            </form>
+                        <label htmlFor="form-email" className="signup-input-container">
+                            <p>Email:</p>
+                            <input
+                                type="text"
+                                id="form-email"
+                                {...register("email",
+                                    {
+                                        required: "Dit moet ingevuld zijn.",
+                                        pattern: {
+                                            value: /^(.+)@(.+)$/,
+                                            message: "Het e-mailadres heeft een '@' nodig."
+                                        }
+                                    })}
+                                className="signup-input-field"
+                            />
+                            <ErrorMessage
+                                errors={errors}
+                                name="email"
+                                render={({message}) => <p className="signup-error-message">{message}</p>}
+                            />
+                        </label>
+
+                        <label htmlFor="form-wachtwoord" className="signup-input-container">
+                            <p>Wachtwoord:</p>
+                            <input
+                                type="password"
+                                id="form-wachtwoord"
+                                {...register("password",
+                                    {
+                                        required: "Dit moet ingevuld zijn",
+                                        minLength: {
+                                            value: 6,
+                                            message: "De minimale lengte dient 6 karakters te zijn."
+                                        }
+                                    })}
+                                className="signup-input-field"
+                            />
+                            <ErrorMessage
+                                errors={errors}
+                                name="password"
+                                render={({message}) => <p className="signup-error-message">{message}</p>}
+                            />
+                        </label>
+
+                        <button
+                            type="submit"
+                            className="signup-button"
+                        >Registreren
+                        </button>
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

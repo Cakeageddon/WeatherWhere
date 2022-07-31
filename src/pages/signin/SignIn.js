@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import {useForm} from "react-hook-form";
 import {Link} from "react-router-dom";
 import axios from "axios";
@@ -10,8 +10,10 @@ import NavBar from "../../components/navBar/NavBar";
 function SignIn() {
     const {register, handleSubmit} = useForm();
     const {login} = useContext(AuthContext)
+    const [error, setError] = useState(false);
 
     async function handleLogin(data) {
+        setError(false)
         console.log(data)
         try {
             const result = await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signin`, {
@@ -21,9 +23,9 @@ function SignIn() {
             )
             console.log(result)
             login(result.data.accessToken)
-
         } catch (e) {
             console.error(e)
+            setError(true)
         }
     }
 
@@ -55,11 +57,16 @@ function SignIn() {
                                 className="signin-input-field"
                             />
                         </label>
+
                         <button
                             type="submit"
                             className="signin-button"
                         >Inloggen
                         </button>
+
+                        {error === true ?
+                            <p>Deze inloggegevens kloppen niet; kijk je spelling na en probeer opnieuw.</p> : null}
+
                     </form>
                     <p>Geen account? Dat kan ook.</p>
                     <p>Wil je er toch een? Klik dan <Link to="/registratie">hier!</Link></p>
