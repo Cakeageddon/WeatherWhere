@@ -60,6 +60,7 @@ function AuthContextProvider({children}) {
         })
         localStorage.clear()
         history.push('/loguit')
+        window.location.reload()
     }
 
     const data = {
