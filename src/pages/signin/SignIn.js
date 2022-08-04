@@ -34,7 +34,7 @@ function SignIn() {
             <HeaderWeather/>
             <NavBar/>
             <div className="signin-outer-container">
-                <div className="signin-form-container">
+                <section className="signin-form-container">
                     <p>Vul de velden hieronder in om in te loggen.</p>
                     <form onSubmit={handleSubmit(handleLogin)} className="signin-form">
                         <label htmlFor="form-email" className="signin-input-container">
@@ -70,7 +70,7 @@ function SignIn() {
                     </form>
                     <p>Geen account? Dat kan ook.</p>
                     <p>Wil je er toch een? Klik dan <Link to="/registratie">hier!</Link></p>
-                </div>
+                </section>
             </div>
         </div>
     )

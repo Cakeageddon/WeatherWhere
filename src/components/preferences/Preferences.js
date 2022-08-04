@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, } from "react";
+import React, {useContext, useEffect,} from "react";
 import {useForm} from "react-hook-form";
 import {PreferencesContext} from "../../context/PreferencesContext";
 import "./Preferences.css"
@@ -37,18 +37,18 @@ function Preferences() {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="preferences-input-wrapper">
+            <article className="preferences-input-wrapper">
                 <p>Temperatuurvoorkeur in %</p>
                 <p>Koud<input type="range" placeholder="temperature" {...register("temperature", {})}/>Warm</p>
-            </div>
-            <div className="preferences-input-wrapper">
+            </article>
+            <article className="preferences-input-wrapper">
                 <p>Bewolking: {watchCloudiness} %</p>
                 <input type="range" placeholder="cloudiness" {...register("cloudiness", {})} />
-            </div>
-            <div className="preferences-input-wrapper">
+            </article>
+            <article className="preferences-input-wrapper">
                 <p>Wind op schaal van beaufort: {watchWindspeed}</p>
                 <input type="range" placeholder="windspeed" max="12" {...register("windspeed", {})} />
-            </div>
+            </article>
             <button
                 type="submit"
                 className="preferences-button"

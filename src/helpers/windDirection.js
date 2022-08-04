@@ -1,4 +1,4 @@
-function windDirection(windDeg){
+function windDirection(windDeg) {
     switch (true) {
         case 360:
             return "N";
@@ -8,17 +8,17 @@ function windDirection(windDeg){
             return "Z";
         case 270 :
             return "W";
-        case (windDeg>0 && windDeg<90) :
+        case (windDeg > 0 && windDeg < 90) :
             return "NO";
-        case (windDeg>90 && windDeg<180) :
-            return  "ZO";
-        case (windDeg>180 && windDeg<270) :
+        case (windDeg > 90 && windDeg < 180) :
+            return "ZO";
+        case (windDeg > 180 && windDeg < 270) :
             return "ZW";
-        case (windDeg>270 && windDeg<360) :
+        case (windDeg > 270 && windDeg < 360) :
             return "NW";
         case 0 :
         default:
-            return  "-";
+            return "-";
     }
 }
 

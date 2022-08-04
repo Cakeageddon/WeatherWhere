@@ -32,30 +32,28 @@ function SaveCity() {
 
     useEffect(() => {
         localStorage.setItem('cities', JSON.stringify(cityList));
-    },[cityList])
+    }, [cityList])
 
     return (
-        <div className="savecity-container">
+        <section className="savecity-container">
             <p>Opgeslagen steden: (Max 5)</p>
-            <div className="save-cityform-container">
-                <form onSubmit={handleSubmit}>
-                    <input
+            <form onSubmit={handleSubmit}>
+                <input
                     type="text"
                     value={city}
                     className={error ? 'error' : 'city-input'}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Voer hier de stad in"
-                    />
-                    <button type="submit" className="button" disabled={cityList.length === 5}>
-                        Voeg stad toe
-                    </button>
-                </form>
-            </div>
-            <div className="saved-cities-container">
+                />
+                <button type="submit" className="button" disabled={cityList.length === 5}>
+                    Voeg stad toe
+                </button>
+            </form>
+            <section className="saved-cities-container">
                 {cityList.map((city) => {
-                    const { id, location } = city;
+                    const {id, location} = city;
                     return (
-                        <div key={id} className="city-card">
+                        <article key={id} className="city-card">
                             <p className="city">{location}</p>
                             <button
                                 type="button"
@@ -63,11 +61,11 @@ function SaveCity() {
                                 className="button"
                             > Verwijder Stad
                             </button>
-                        </div>
+                        </article>
                     );
                 })}
-            </div>
-        </div>
+            </section>
+        </section>
     );
 }
 

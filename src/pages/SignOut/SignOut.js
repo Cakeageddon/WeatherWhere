@@ -12,30 +12,30 @@ function SignOut() {
         <div className="signout-background">
             <HeaderWeather/>
             <NavBar/>
-        <div className="signout-outer-container">
-            <div className="signout-button-text-container">
-                <div className="signout-goodbye-text">
+            <div className="signout-outer-container">
+                <div className="signout-button-text-container">
+                <span className="signout-goodbye-text">
                     <p>U bent uitgelogd.</p>
                     <p>Een prettige dag en tot de volgende keer!</p>
+                </span>
+                    <p>Foutje?</p>
+                    <button
+                        type="button"
+                        onClick={() => history.push("/login")}
+                        className="signout-page-button"
+                    >
+                        Log In
+                    </button>
+                    <p>Of</p>
+                    <button
+                        type="button"
+                        onClick={() => history.push("/")}
+                        className="signout-page-button"
+                    >
+                        Home
+                    </button>
                 </div>
-                <p>Foutje?</p>
-                <button
-                    type="button"
-                    onClick={() => history.push("/login")}
-                    className="signout-page-button"
-                >
-                    Log In
-                </button>
-                <p>Of</p>
-                <button
-                    type="button"
-                    onClick={() => history.push("/")}
-                    className="signout-page-button"
-                >
-                    Home
-                </button>
             </div>
-        </div>
         </div>
     )
 }

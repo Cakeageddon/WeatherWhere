@@ -14,23 +14,21 @@ function Profile() {
             <NavBar/>
             <div className="profile-outer-container">
                 <div className="profile-text-city-pref-container">
-                    <div className="profile-text-container">
+                    <span className="profile-text-container">
                         <p>Pas op deze pagina jouw opgeslagen steden en voorkeuren aan naar jouw wensen.</p>
-                    </div>
-
+                    </span>
                     <div className="profile-city-and-preferences-container">
-                        <div className="profile-saved-cities-container">
+                        <section className="profile-saved-cities-container">
                             <SaveCity/>
-                        </div>
-                        <div className="profile-preferences-container">
+                        </section>
+                        <section className="profile-preferences-container">
                             <Preferences/>
-                        </div>
+                        </section>
                     </div>
                 </div>
-
-                <div className="profile-sidebar-container">
+                <aside className="profile-sidebar-container">
                     <p>Wil je je wachtwoord veranderen? Klik dan <Link to="/wachtwoord-verandering">hier!</Link></p>
-                </div>
+                </aside>
             </div>
         </div>
     )

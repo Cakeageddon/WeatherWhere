@@ -37,36 +37,36 @@ function PasswordChange() {
         <div className="passwordchange-background">
             <HeaderWeather/>
             <NavBar/>
-        <div className="passwordchange-outer-container">
-            <div className="passwordchange-form-container">
-                <p>Vul de velden hieronder in om het wachtwoord aan te passen.</p>
-                <form onSubmit={handleSubmit(changeSubmit)} className="passwordchange-form">
-                    <label htmlFor="form-nieuw-wachtwoord" className="passwordchange-input-container">
-                        <p>Nieuw wachtwoord:</p>
-                        <input
-                            type="password"
-                            id="form-nieuw-wachtwoord"
-                            {...register("password")}
-                        />
-                    </label>
-                    <label htmlFor="form-nieuw-wachtwoord-herhaling" className="passwordchange-input-container">
-                        <p>Nieuw wachtwoord herhaald:</p>
-                        <input
-                            type="password"
-                            id="form-nieuw-wachtwoord-herhaald"
-                            {...register("passwordRepeated")}
-                        />
-                    </label>
-                    <button
-                        type="submit"
-                        className="passwordchange-button"
-                    >Aanpassen
-                    </button>
-                    {error === true ?
-                        <p>Deze gegevens kloppen niet; kijk je spelling na en probeer opnieuw.</p> : null}
-                </form>
+            <div className="passwordchange-outer-container">
+                <div className="passwordchange-form-container">
+                    <p>Vul de velden hieronder in om het wachtwoord aan te passen.</p>
+                    <form onSubmit={handleSubmit(changeSubmit)} className="passwordchange-form">
+                        <label htmlFor="form-nieuw-wachtwoord" className="passwordchange-input-container">
+                            <p>Nieuw wachtwoord:</p>
+                            <input
+                                type="password"
+                                id="form-nieuw-wachtwoord"
+                                {...register("password")}
+                            />
+                        </label>
+                        <label htmlFor="form-nieuw-wachtwoord-herhaling" className="passwordchange-input-container">
+                            <p>Nieuw wachtwoord herhaald:</p>
+                            <input
+                                type="password"
+                                id="form-nieuw-wachtwoord-herhaald"
+                                {...register("passwordRepeated")}
+                            />
+                        </label>
+                        <button
+                            type="submit"
+                            className="passwordchange-button"
+                        >Aanpassen
+                        </button>
+                        {error === true ?
+                            <p>Deze gegevens kloppen niet; kijk je spelling na en probeer opnieuw.</p> : null}
+                    </form>
+                </div>
             </div>
-        </div>
         </div>
     )
 }

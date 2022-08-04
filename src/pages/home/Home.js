@@ -49,51 +49,50 @@ function Home() {
         <div className="home-background">
             <HeaderWeather/>
             <NavBar/>
-        <div className="home-outer-container">
-            {loggedIn ?
-                <div className="saved-city-list-container">
-                    <SavedCityListHome/>
-                </div>
-                :
-                <div className="saved-city-loggedout-container">
-                    <p className="saved-city-loggedout-message">
-                        Log in of maak een account aan om hier jouw favoriete of opgeslagen steden te weergeven!
-                    </p>
-                </div>
-            }
+            <div className="home-outer-container">
+                {loggedIn ?
+                    <section className="saved-city-list-container">
+                        <SavedCityListHome/>
+                    </section>
+                    :
+                    <article className="saved-city-loggedout-container">
+                        <p className="saved-city-loggedout-message">
+                            Log in of maak een account aan om hier jouw favoriete of opgeslagen steden te weergeven!
+                        </p>
+                    </article>
+                }
+                <div className="image-and-search-container">
+                    <div className="image-container">
+                        <img src={Placeholder} alt="placeholder" className="home-image"/>
+                    </div>
 
-            <div className="image-and-search-container">
-                <div className="image-container">
-                    <img src={Placeholder} alt="placeholder" className="home-image"/>
-                </div>
-
-                <div className="weather-search-container">
-                    <SearchBar setLocationHandler={setLocation}/>
-                    {error &&
-                        (<span className="wrong-location-error">
+                    <section className="weather-search-container">
+                        <SearchBar setLocationHandler={setLocation}/>
+                        {error &&
+                            (<span className="wrong-location-error">
                             Oeps! Deze locatie bestaat niet. Kijk de spelling na.
                         </span>)}
 
-                    <span className="location-details">
+                        <span className="location-details">
                         {loading && (<span>Loading...</span>)}
 
-                        {weatherData && <div className="weather-home-details">
-                            <h4>{weatherData.name} {kelvinToCelcius(weatherData.main.temp)}
-                                <div className="icon-wrapper">
-                                    {iconMapper(weatherData.weather[0].main)}
-                                </div>
-                            </h4>
-                            <p>{weatherData.weather[0].description}</p>
-                            <p>Windrichting: {windDirection(weatherData.wind.deg)}</p>
-                            <p>Windkracht: {windSpeed(weatherData.wind.speed)}</p>
-                            <p>Luchtvochtigheid: {weatherData.main.humidity}% </p>
-                            <p>Bewolking: {weatherData.clouds.all}%</p>
-                        </div>
-                        }
-                    </span>
+                            {weatherData && <article className="weather-home-details">
+                                <h4>{weatherData.name} {kelvinToCelcius(weatherData.main.temp)}
+                                    <div className="icon-wrapper">
+                                        {iconMapper(weatherData.weather[0].main)}
+                                    </div>
+                                </h4>
+                                <p>{weatherData.weather[0].description}</p>
+                                <p>Windrichting: {windDirection(weatherData.wind.deg)}</p>
+                                <p>Windkracht: {windSpeed(weatherData.wind.speed)}</p>
+                                <p>Luchtvochtigheid: {weatherData.main.humidity}% </p>
+                                <p>Bewolking: {weatherData.clouds.all}%</p>
+                            </article>
+                            }
+                        </span>
+                    </section>
                 </div>
             </div>
-        </div>
         </div>
     )
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import './HeaderWeather.css'
 
 function HeaderWeather() {
@@ -7,12 +7,20 @@ function HeaderWeather() {
 
     function getPageName() {
         switch (location.pathname) {
-            case "/" : return "Home"
-            case "/login" : return "Login"
-            case "/wachtwoord-verandering" : return "Wachtwoord verandering"
-            case "/registratie" : return "Account Registratie"
-            case "/profiel" : return "Profiel"
-            case "/loguit" : return "Loguit"
+            case "/" :
+                return "Home"
+            case "/login" :
+                return "Login"
+            case "/wachtwoord-verandering" :
+                return "Wachtwoord verandering"
+            case "/registratie" :
+                return "Account Registratie"
+            case "/profiel" :
+                return "Profiel"
+            case "/loguit" :
+                return "Loguit"
+            default:
+                return null
         }
     }
 

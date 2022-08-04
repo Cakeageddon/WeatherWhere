@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, } from 'react';
+import React, {createContext, useEffect, useState,} from 'react';
 import {useHistory} from "react-router-dom";
 import axios from "axios";
 
@@ -25,7 +25,7 @@ function AuthContextProvider({children}) {
 
     function login(jwt) {
         localStorage.setItem('token', jwt)
-        fetchUserData(jwt,'/profiel')
+        fetchUserData(jwt, '/profiel')
     }
 
     async function fetchUserData(jwt, redirectUrl) {

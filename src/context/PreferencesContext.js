@@ -12,11 +12,11 @@ function PreferencesContextProvider({children}) {
         if (preferencesList) {
             setPreferencesList(preferencesList);
         }
-    },[])
+    }, [])
 
     return (
         <PreferencesContext.Provider value={[preferencesList, setPreferencesList]}>
-            { children }
+            {children}
         </PreferencesContext.Provider>
     )
 }

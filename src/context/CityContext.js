@@ -10,11 +10,11 @@ function CityContextProvider({children}) {
         if (cityList) {
             setCityList(cityList);
         }
-    },[])
+    }, [])
 
     return (
         <CityContext.Provider value={[cityList, setCityList]}>
-            { children }
+            {children}
         </CityContext.Provider>
     )
 }

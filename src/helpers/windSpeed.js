@@ -1,4 +1,4 @@
-function windSpeed(speed){
+function windSpeed(speed) {
     switch (true) {
         case (speed > 0 && speed < 0.3):
             return 0;
@@ -11,7 +11,7 @@ function windSpeed(speed){
         case (speed > 5.4 && speed < 7.9):
             return 4;
         case (speed > 7.9 && speed < 10.7):
-            return  5;
+            return 5;
         case (speed > 10.7 && speed < 13.8):
             return 6;
         case (speed > 13.8 && speed < 17.1):
@@ -28,7 +28,7 @@ function windSpeed(speed){
             return 12;
 
         default:
-            return  "-";
+            return "-";
     }
 }
 

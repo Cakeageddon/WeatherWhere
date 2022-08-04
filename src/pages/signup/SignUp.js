@@ -37,7 +37,7 @@ function SignUp() {
             <HeaderWeather/>
             <NavBar/>
             <div className="signup-outer-container">
-                <div className="signup-form-container">
+                <section className="signup-form-container">
                     <p>Vul de velden hieronder in om jezelf te registreren.</p>
                     <form onSubmit={handleSubmit(registrationSubmit)} className="signup-form">
                         <label htmlFor="form-gebruikersnaam" className="signup-input-container">
@@ -111,7 +111,7 @@ function SignUp() {
                         >Registreren
                         </button>
                     </form>
-                </div>
+                </section>
             </div>
         </div>
     )
