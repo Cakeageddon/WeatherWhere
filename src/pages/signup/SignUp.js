@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {ErrorMessage} from "@hookform/error-message";
 import {useForm} from "react-hook-form";
 import axios from "axios";
@@ -15,10 +15,12 @@ function SignUp() {
     } = useForm({
         criteriaMode: "all"
     });
+    const [error, setError] = useState(false);
 
     const history = useHistory()
 
     async function registrationSubmit(data) {
+        setError(false)
         try {
             await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signup`, {
                     username: data.username,
@@ -29,6 +31,7 @@ function SignUp() {
             history.push('/login')
         } catch (e) {
             console.error(e)
+            setError(true)
         }
     }
 
@@ -110,6 +113,8 @@ function SignUp() {
                             className="signup-button"
                         >Registreren
                         </button>
+                        {error === true ?
+                            <p>Deze gebruikersnaam bestaat al, kies een andere naam.</p> : null}
                     </form>
                 </section>
             </div>
