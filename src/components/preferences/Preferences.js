@@ -38,7 +38,7 @@ function Preferences() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <article className="preferences-input-wrapper">
-                <p>Temperatuurvoorkeur in %</p>
+                <p>Temperatuurvoorkeur</p>
                 <p>Koud<input type="range" placeholder="temperature" {...register("temperature", {})}/>Warm</p>
             </article>
             <article className="preferences-input-wrapper">
