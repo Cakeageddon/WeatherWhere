@@ -34,20 +34,20 @@ Reden genoeg voor Weatherwhere; een website waar jij jouw favoriete locaties en 
 Clone het project naar jouw locale machine.
 
 
-1) New -> Project from version control...
+1) New -> Project from version control... en voer onderstaande URL in.
 
 ```bash
   https://github.com/Cakeageddon/WeatherWhere.git
 ```
 
-2) Installeer de dependencies
+2) Installeer de dependencies door de terminal van jouw IDE.
 
 ```bash
   npm install
 ```
 
-3) Creëer een .env bestand en vul deze met de variabele aanwezig in het .env.dist bestand. 
-Plak hier vervolgens de API-key erachter zonder spaties.
+3) Creëer een .env bestand in de weatherwhere map (dus niet in de src map) en vul deze met de variabele aanwezig in het .env.dist bestand. 
+Plak hier vervolgens de OpenWeather API-key erachter zonder spaties.
 
 
 4) Creëer een build om het geheel werkend te krijgen.
