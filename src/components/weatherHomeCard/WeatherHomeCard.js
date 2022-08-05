@@ -20,11 +20,12 @@ function WeatherHomeCard({
                              windDegree,
                              weatherWindSpeed,
                              humidity,
-                             clouds
+                             clouds,
+                             id,
                          }) {
 
     return (
-        <article className="weather-card">
+        <article className="weather-card" key={id}>
             <div className="weather-name-score">
                 <h4>{name} </h4>
                 <p>Score:</p>

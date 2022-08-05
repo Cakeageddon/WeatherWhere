@@ -10,6 +10,7 @@ function SavedCityListHome() {
     const [preferencesList] = useContext(PreferencesContext)
     const [cityListWeatherData, setCityListWeatherData] = useState([])
     const [error, setError] = useState(false)
+    const id = new Date().getTime().toString(36) + new Date().getUTCMilliseconds();
 
     useEffect(() => {
         const exec = async () => {
@@ -62,6 +63,7 @@ function SavedCityListHome() {
                     <section className="weatherCards">
                         {cityListWeatherData && cityListWeatherData.map((cityWeather) => {
                             return <WeatherHomeCard
+                                key={cityWeather.name}
                                 name={cityWeather.name}
                                 tempK={cityWeather.main.temp}
                                 score={cityWeather.score}

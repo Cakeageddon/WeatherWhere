@@ -14,7 +14,6 @@ function SignIn() {
 
     async function handleLogin(data) {
         setError(false)
-        console.log(data)
         try {
             const result = await axios.post(`https://frontend-educational-backend.herokuapp.com/api/auth/signin`, {
                     username: data.username,
