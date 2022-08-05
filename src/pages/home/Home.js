@@ -14,7 +14,7 @@ import SavedCityListHome from "../../components/savedCityListHome/SavedCityListH
 import HeaderWeather from "../../components/header/HeaderWeather";
 import NavBar from "../../components/navBar/NavBar";
 
-import Placeholder from '../../assets/images/weatherWherePlaceHolder.jpg';
+import Lightning from '../../assets/images/weatherWherePlaceHolder.jpg';
 
 
 function Home() {
@@ -38,7 +38,6 @@ function Home() {
             }
             toggleLoading(false);
         }
-
         if (location) {
             fetchData();
         }
@@ -63,7 +62,7 @@ function Home() {
                 }
                 <div className="image-and-search-container">
                     <div className="image-container">
-                        <img src={Placeholder} alt="placeholder" className="home-image"/>
+                        <img src={Lightning} alt="Thunderstruck" className="home-image"/>
                     </div>
 
                     <section className="weather-search-container">

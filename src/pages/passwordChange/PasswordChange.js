@@ -13,7 +13,6 @@ function PasswordChange() {
     const jwt = localStorage.getItem('token')
 
     async function changeSubmit(data) {
-        console.log(data)
         setError(false)
         try {
             await axios.put(`https://frontend-educational-backend.herokuapp.com/api/user`, {

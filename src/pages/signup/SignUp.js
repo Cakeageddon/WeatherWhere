@@ -16,7 +16,6 @@ function SignUp() {
         criteriaMode: "all"
     });
     const [error, setError] = useState(false);
-
     const history = useHistory()
 
     async function registrationSubmit(data) {

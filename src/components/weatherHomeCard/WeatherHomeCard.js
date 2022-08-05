@@ -1,14 +1,11 @@
 import React from "react";
-
 import kelvinToCelcius from "../../helpers/kelvinToCelsius";
 import iconMapper from "../../helpers/iconMapper";
 import windDirection from "../../helpers/windDirection";
 import windSpeed from "../../helpers/windSpeed";
-
 import windSockIcon from "../../assets/icons/icons8-windsock-50.png"
 import humidityIcon from "../../assets/icons/icons8-humidity-50.png"
 import cloudIcon from "../../assets/icons/icons8-clouds-64.png"
-
 import "./WeatherHomeCard.css"
 
 function WeatherHomeCard({
@@ -49,7 +46,6 @@ function WeatherHomeCard({
                         : {clouds}%</span></p>
             </div>
         </article>
-
     )
 }
 

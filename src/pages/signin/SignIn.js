@@ -56,16 +56,13 @@ function SignIn() {
                                 className="signin-input-field"
                             />
                         </label>
-
                         <button
                             type="submit"
                             className="signin-button"
                         >Inloggen
                         </button>
-
                         {error === true ?
                             <p>Deze inloggegevens kloppen niet; kijk je spelling na en probeer opnieuw.</p> : null}
-
                     </form>
                     <p>Geen account? Dat kan ook.</p>
                     <p>Wil je er toch een? Klik dan <Link to="/registratie">hier!</Link></p>

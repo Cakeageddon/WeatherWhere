@@ -10,7 +10,6 @@ function SavedCityListHome() {
     const [preferencesList] = useContext(PreferencesContext)
     const [cityListWeatherData, setCityListWeatherData] = useState([])
     const [error, setError] = useState(false)
-    const id = new Date().getTime().toString(36) + new Date().getUTCMilliseconds();
 
     useEffect(() => {
         const exec = async () => {

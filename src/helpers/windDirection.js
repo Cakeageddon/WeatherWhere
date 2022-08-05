@@ -8,13 +8,13 @@ function windDirection(windDeg) {
             return "Z";
         case 270 :
             return "W";
-        case (windDeg > 0 && windDeg < 90) :
+        case (windDeg > 0 && windDeg < 89) :
             return "NO";
-        case (windDeg > 90 && windDeg < 180) :
+        case (windDeg > 91 && windDeg < 179) :
             return "ZO";
-        case (windDeg > 180 && windDeg < 270) :
+        case (windDeg > 181 && windDeg < 269) :
             return "ZW";
-        case (windDeg > 270 && windDeg < 360) :
+        case (windDeg > 271 && windDeg < 359) :
             return "NW";
         case 0 :
         default:
